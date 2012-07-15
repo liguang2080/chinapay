@@ -12,7 +12,7 @@ module Chinapay
   
   ADAPTER_TYPES = ["alipay", "tenpay", "1002", "1038", "1003", "1052", "1005", "1020", "1024", "1022", "1006", "1008", "1004", "1021", "1009", "1025", "1027", "1032"]
   
-  def self.build_request(adapter, title, total_fee, notify_url, attach, bank_type = '0')
+  def self.build_request(adapter, title, total_fee, notify_url, attach)
     adapter = adapter.to_s
     
     raise "Not vaid chinapay adapter, it should be in #{ADAPTER_TYPES}" unless ADAPTER_TYPES.include?(adapter)
