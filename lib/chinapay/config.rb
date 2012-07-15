@@ -6,7 +6,7 @@ module Chinapay
   def self.load_config
     begin
       # filename = "#{Rails.root}/config/chinapay.yml"
-      filename = File.expand_path(File.dirname(__FILE__) + "/../chinapay.yml")
+      filename = File.expand_path(Rails.root.to_s + "/config/chinapay.yml")
       @config = YAML.load(File.open(filename))[Rails.env]
     rescue Exception => e
       puts <<-EXAMPLE

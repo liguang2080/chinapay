@@ -15,14 +15,14 @@ module Chinapay
       def url
         sign_parameters = {
           :service => "create_direct_pay_by_user",
-          :partner => Chinapay::CONFIG["alipay"]["parter"],
+          :partner => Chinapay.config["alipay"]["parter"],
           :_input_charset => "utf-8",
           :return_url => @notify_url,
           :notify_url => @notify_url,
           :out_trade_no => Time.now.to_i + Time.now.tv_usec * 1000 + $$,
           :subject => @title,
           :payment_type => 1,
-          :seller_email => Chinapay::CONFIG["alipay"]["seller"],
+          :seller_email => Chinapay.config["alipay"]["seller"],
           :total_fee => @total_fee,
           :extra_common_param => @attach
         }
@@ -35,7 +35,7 @@ module Chinapay
 
       private
       def md5_sort(hash)
-        Digest::MD5.hexdigest(hash.keys.sort.map {|k| "#{k}=#{hash[k]}"}.join('&') + Chinapay::CONFIG["alipay"]["key"]).downcase
+        Digest::MD5.hexdigest(hash.keys.sort.map {|k| "#{k}=#{hash[k]}"}.join('&') + Chinapay.config["alipay"]["key"]).downcase
       end
 
     end

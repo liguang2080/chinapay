@@ -2,22 +2,32 @@
 module Chinapay
   module Response
     class Tencent
-      attr_reader :trade_no, :total_fee, :attach
+      attr_reader :trade_no, :total_fee, :attach, :pay_type
 
       def initialize(params)
-        @cmdno = params[:cmdno] || ''
-        @pay_result = params[:pay_result] || ''
-        @date = params[:date] || ''
-        @transaction_id = params[:transaction_id] || ''
-        @sp_billno = (params[:sp_billno] || '').to_i
-        @total_fee = params[:total_fee] || ''
-        @fee_type = params[:fee_type] || ''
-        @attach = params[:attach] || ''
+        @cmdno = params["cmdno"] || ''
+        @pay_result = params["pay_result"] || ''
+        @date = params["date"] || ''
+        @transaction_id = params["transaction_id"] || ''
+        @sp_billno = (params["sp_billno"] || '').to_i
+        @total_fee = params["total_fee"] || ''
+        @fee_type = params["fee_type"] || ''
+        @attach = params["attach"] || ''
 
-        @sign = params[:sign] || ''
+        @sign = params["sign"] || ''
 
-        @bargainor_id = Chinapay::CONFIG["tencent"]["parter"]
-        @key = Chinapay::CONFIGp["tencent"]["key"]
+        @bargainor_id = Chinapay.config["tencent"]["parter"]
+        @key = Chinapay.config["tencent"]["key"]
+        
+        @pay_type = "财付通"
+      end
+      
+      def total_fee
+        @total_fee.to_f / 100
+      end
+      
+      def trade_no
+        @sp_billno
       end
 
       def successful?

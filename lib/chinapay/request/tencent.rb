@@ -10,8 +10,8 @@ module Chinapay
         @bank_type = bank_type
         @desc = title || "即时到账充值"
 
-        @bargainor_id = Chinapay::CONFIG["tencent"]["parter"]
-        @key = Chinapay::CONFIG["tencent"]["key"]
+        @bargainor_id = Chinapay.config["tencent"]["parter"]
+        @key = Chinapay.config["tencent"]["key"]
 
         @sp_billno = Time.now.to_i + Time.now.tv_usec * 1000 + $$
         @transaction_id = "#{@bargainor_id}#{@date}#{@sp_billno}"
