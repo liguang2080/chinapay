@@ -8,14 +8,14 @@ module Chinapay
     rescue Exception => e
       puts <<-EXAMPLE
       ---
-        tencent:
-        parter: 1211116701
-      key: 3b46d59ae2095e6d9d0f95e4f510e962
-      seller: 1211116701
+      tencent:
+        parter: 121111XXXX
+        key: XXXXXXXXXXXXXXXXXX
+        seller: 121111XXXX
       alipay:
-        parter: 1211116701
-      key: 3b46d59ae2095e6d9d0f95e4f510e962
-      seller: lg2046@gmail.com
+        parter: 12111XXXX
+        key: XXXXXXX
+        seller: XXXXX@XXXXX.com
       EXAMPLE
       raise "Please configure your Chinapay settings in #{filename}."
     end
