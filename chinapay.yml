@@ -1,9 +1,10 @@
 ---
-tencent:
-    parter: 121111XXXX
-    key: XXXXXXXXXXXXXXXXXX
-    seller: 121111XXXX
-alipay:
-    parter: 12111XXXX
-    key: XXXXXXX
-    seller: XXXXX@XXXXX.com
+development:
+    tencent:
+        parter: 121111XXXX
+        key: XXXXXXXXXXXXXXXXXX
+        seller: 121111XXXX
+    alipay:
+        parter: 12111XXXX
+        key: XXXXXXX
+        seller: XXXXX@XXXXX.com
