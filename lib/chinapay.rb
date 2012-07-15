@@ -3,6 +3,8 @@ require 'yaml'
 require 'digest/md5'
 require 'cgi'
 
+require File.dirname(__FILE__) + '/chinapay/request/config'
+
 require File.dirname(__FILE__) + '/chinapay/request/tencent'
 require File.dirname(__FILE__) + '/chinapay/request/alipay'
 require File.dirname(__FILE__) + '/chinapay/response/tencent'
