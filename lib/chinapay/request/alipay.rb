@@ -35,7 +35,7 @@ module Chinapay
 
       private
       def md5_sort(hash)
-        Digest::MD5.hexdigest(hash.keys.sort.map {|k| "#{k}=#{hash[k]}"}.join('&') + Chinapay.config["alipay"]["key"]).downcase
+        Digest::MD5.hexdigest(hash.keys.sort {|va,kb| va.to_s <=> kb.to_s}.map {|k| "#{k}=#{hash[k]}"}.join('&') + Chinapay.config["alipay"]["key"]).downcase
       end
 
     end
