@@ -1,3 +1,3 @@
-module Tencentpay
-  VERSION = "1.1.0"
+module Chinapay
+  VERSION = "1.2.0"
 end

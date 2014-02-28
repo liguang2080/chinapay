@@ -1,7 +1,7 @@
 module Chinapay
-  
+
   class << self; attr_accessor :config; end
-  
+
   # 配置采用统一的 parter_id key seller
   def self.load_config
     begin

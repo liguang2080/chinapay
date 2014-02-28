@@ -18,14 +18,14 @@ module Chinapay
 
         @bargainor_id = Chinapay.config["tencent"]["parter"]
         @key = Chinapay.config["tencent"]["key"]
-        
+
         @pay_type = "财付通"
       end
-      
+
       def total_fee
         @total_fee.to_f / 100
       end
-      
+
       def trade_no
         @sp_billno
       end

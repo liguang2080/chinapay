@@ -9,7 +9,7 @@ module Chinapay
         @trade_no = params["out_trade_no"]
         @total_fee = params["total_fee"].to_f
         @attach = params["extra_common_param"]
-        
+
         @pay_type = "支付宝"
       end
 

@@ -6,15 +6,13 @@ Gem::Specification.new do |gem|
   gem.email         = ["lg2046@gmail.com"]
   gem.description   = %q{支持支付宝 财付通的ruby 即时到账}
   gem.summary       = %q{支持支付宝 财付通的ruby 即时到账}
-  gem.homepage      = ""
+  gem.homepage      = "http://github.com/lg2046"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "chinapay"
   gem.require_paths = ["lib"]
-  
-  # gem.add_dependency 'nokogiri'
-  
-  gem.version       = Tencentpay::VERSION
+
+  gem.version       = Chinapay::VERSION
 end
